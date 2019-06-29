@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.gov.caixa.gitecsa</groupId>
-	<artifactId>gitecsa-commons</artifactId>
-	<version>1.0.1.01</version>
+	<groupId>br.com.leuras</groupId>
+	<artifactId>leuras-commons</artifactId>
+	<version>1.0.0</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,19 +27,6 @@
 		<mockito.version>1.10.19</mockito.version>
 	</properties>
 	
-	<distributionManagement>
-		<repository>
-			<id>nexus-pedes-releases</id>
-			<name>Repositório de Releases da GITECSA</name>
-			<url>http://artefatos.pedes.caixa:8081/nexus/content/groups/public</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-pedes-snapshots</id>
-			<name>Repositório de Snapshots da GITECSA</name>
-			<url>http://artefatos.pedes.caixa:8081/nexus/content/groups/public</url>
-		</snapshotRepository>
-	</distributionManagement>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
