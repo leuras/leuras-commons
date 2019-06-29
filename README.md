@@ -5,7 +5,7 @@ Este projeto visa prover classes utilitárias que simplifiquem tarefas do cotidi
 A biblioteca provê suporte a:
 
 - Builder para envio de e-mails (incluindo anexos e suporte à templates em HTML)
-- Exportação de Jasper Reports em **PDF**, **DOCX**, **XLSX* *** e **HTML**.
+- Exportação de Jasper Reports em **PDF**, **DOCX**, **XLSX** e **HTML**.
 - Manipulação de arquivos.
 - Validação e formatação de CPF e CNPJ.
 - Manipulação de datas.
