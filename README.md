@@ -1,4 +1,9 @@
 # Leuras Commons API
+
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/leuras/leuras-commons)
+[![Build Status](https://travis-ci.org/leuras/leuras-commons.svg?branch=master)](https://travis-ci.org/leuras/leuras-commons)
+![GitHub](https://img.shields.io/github/license/leuras/leuras-commons)
+
 Este projeto visa prover classes utilitárias que simplifiquem tarefas do cotidiano de desenvolvedores java, tornando mais simples a implementação de soluções voltadas especificamente para o âmbito nacional.
 
 ## Funcionalidades
