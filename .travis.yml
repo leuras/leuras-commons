@@ -1,4 +1,10 @@
 language: java
+dist: trusty
+addons:
+    apt:
+        packages:
+            - openjdk-7-jdk
+            - openjdk-8-jdk
 jdk:
     - openjdk7
     - openjdk8

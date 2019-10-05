@@ -4,12 +4,19 @@ import java.lang.reflect.Constructor;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
+import java.util.Locale;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class NumeralUtilsTest {
+	
+	@Before
+	public void setup() {
+		Locale.setDefault(new Locale("en", "US"));
+	}
     
     @Test
     public void construtorTest() throws Exception {

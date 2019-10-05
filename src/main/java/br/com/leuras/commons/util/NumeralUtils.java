@@ -200,7 +200,7 @@ public final class NumeralUtils {
     public static String comoPorcentagem(final Number valor, final Integer precisao) {
         final String formato = String.format("%%.%df%%%%", precisao);
 
-        return String.format(formato, valor);
+        return String.format(Brasil.Local.BR, formato, valor);
     }
 
     /**
