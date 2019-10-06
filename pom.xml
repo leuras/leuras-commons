@@ -1,9 +1,39 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.com.leuras</groupId>
 	<artifactId>leuras-commons</artifactId>
-	<version>1.0.0</version>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>
+		Este projeto visa prover classes utilitárias que simplifiquem tarefas do cotidiano de desenvolvedores java, 
+		tornando mais simples a implementação de soluções voltadas especificamente para o âmbito nacional.
+	</description>
+	<url>https://github.com/leuras/leuras-commons</url>
+
+	<licenses>
+		<license>
+			<name>GNU General Public License version 3</name>
+			<url>https://opensource.org/licenses/GPL-3.0</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Fernando Libório</name>
+			<email>fernando.liborio@yahoo.com.br</email>
+			<organization>Leuras</organization>
+			<organizationUrl>https://github.com/leuras</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/leuras/leuras-commons.git</connection>
+		<developerConnection>scm:git:ssh://github.com:leuras/leuras-commons.git</developerConnection>
+		<url>https://github.com/leuras/leuras-commons/tree/master</url>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -15,55 +45,55 @@
 		<apache.commons.version>3.7</apache.commons.version>
 		<apache.poi.version>3.7</apache.poi.version>
 		<apache.email.version>1.5</apache.email.version>
-		
+
 		<!-- Jasper Reports -->
 		<jasper.reports.version>5.5.2</jasper.reports.version>
-		
+
 		<!-- Jtwig -->
 		<jtwig.core.version>5.86.1.RELEASE</jtwig.core.version>
-		
+
 		<!-- Testes Unitários -->
 		<junit.version>4.9</junit.version>
 		<mockito.version>1.10.19</mockito.version>
 	</properties>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${apache.commons.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi</artifactId>
 			<version>${apache.poi.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-ooxml</artifactId>
 			<version>${apache.poi.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-email</artifactId>
 			<version>${apache.email.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>${jasper.reports.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.jtwig</groupId>
 			<artifactId>jtwig-core</artifactId>
 			<version>${jtwig.core.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -78,7 +108,18 @@
 			<version>${mockito.version}</version>
 		</dependency>
 	</dependencies>
-	
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<resources>
 			<resource>
@@ -89,5 +130,69 @@
 				</includes>
 			</resource>
 		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.2.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar-no-fork</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.7</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
