@@ -48,6 +48,9 @@
 
 		<!-- Jasper Reports -->
 		<jasper.reports.version>5.5.2</jasper.reports.version>
+		
+		<!-- iText -->
+		<itext.version>2.1.7</itext.version>
 
 		<!-- Jtwig -->
 		<jtwig.core.version>5.86.1.RELEASE</jtwig.core.version>
@@ -86,6 +89,18 @@
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
 			<version>${jasper.reports.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.lowagie</groupId>
+					<artifactId>itext</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>${itext.version}</version>
 		</dependency>
 
 		<dependency>
