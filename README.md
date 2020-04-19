@@ -17,6 +17,21 @@ A biblioteca provê suporte a:
 - Manipulação de números (moedas, percentagem, etc).
 - Enumeradores contextualizados.
 
+## Instalação
+
+### Apache Maven
+```
+<dependency>
+  <groupId>com.github.leuras</groupId>
+  <artifactId>leuras-commons</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+### Gradle
+```
+implementation 'com.github.leuras:leuras-commons:1.0.0'
+```
 
 ## Documentação
 A documentação javadoc da API pode ser encontrada na pasta [docs](docs/). Caso haja alguma dúvida sobre o uso de algum método especifico, os testes unitários podem ajudar. O projeto conta com mais de 90% de cobertura de código.
