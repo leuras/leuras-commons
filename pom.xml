@@ -45,6 +45,7 @@
 		<apache.commons.version>3.7</apache.commons.version>
 		<apache.poi.version>3.7</apache.poi.version>
 		<apache.email.version>1.5</apache.email.version>
+		<apache.validator.version>1.6</apache.validator.version>
 
 		<!-- Jasper Reports -->
 		<jasper.reports.version>5.5.2</jasper.reports.version>
@@ -83,6 +84,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-email</artifactId>
 			<version>${apache.email.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>${apache.validator.version}</version>
 		</dependency>
 
 		<dependency>

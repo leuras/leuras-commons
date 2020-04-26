@@ -235,7 +235,8 @@ public final class ArquivoUtils {
 	/**
 	 * Sobrescreve ou acrescenta o conteúdo no arquivo indicado.
 	 * 
-	 * @see #abrirParaEdicao(String) #abrirParaEscrita(String)
+	 * @see #abrirParaEdicao(String)
+	 * @see #abrirParaEscrita(String)
 	 * 
 	 * @param saida
 	 *            Stream para o arquivo de saída
