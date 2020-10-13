@@ -56,7 +56,7 @@
 		<jtwig.core.version>5.86.1.RELEASE</jtwig.core.version>
 
 		<!-- Testes Unitários -->
-		<junit.version>4.9</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<mockito.version>1.10.19</mockito.version>
 	</properties>
 
