@@ -43,7 +43,7 @@
 
 		<!-- Apache -->
 		<apache.commons.version>3.7</apache.commons.version>
-		<apache.poi.version>3.7</apache.poi.version>
+		<apache.poi.version>4.1.1</apache.poi.version>
 		<apache.email.version>1.5</apache.email.version>
 
 		<!-- Jasper Reports -->
